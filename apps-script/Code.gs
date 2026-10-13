@@ -6,7 +6,7 @@
  * 3) 배포 → 새 배포 → 웹 앱 (실행: 나, 액세스: 모든 사용자) → /exec URL을 config.js의 SUBMIT_URL에 넣는다.
  */
 
-var SHARED_TOKEN = 'CHANGE-ME';   // 예: 'hsg-8k2m7q'
+var SHARED_TOKEN = 'hsg-4q7m2x';
 var NOTIFY_EMAIL = '';            // 새 응답 알림 받을 메일 (비워두면 알림 없음)
 
 var RESP = 'Responses';
