@@ -14,7 +14,7 @@
     { id: 'B1', sec: 0, type: 'time', req: true, title: '답안 수합·채점에\n얼마나 걸리셨나요?', hint: '종이 OMR 수합, 수기 채점, 엑셀 입력 등을 모두 포함해서 고려해주세요!' },
     { id: 'B2', sec: 0, type: 'time', req: true, title: '과목별 점수·과락 집계는\n얼마나 걸리셨나요?', hint: '5과목 105문항 분류와 과락자 파악까지 모두 포함해서 고려해주세요!' },
     { id: 'B3', sec: 0, type: 'time', req: true, title: '학생별 약점 분석과\n상담 자료 준비에는\n얼마나 걸리셨나요?', hint: '학생 1명당이 아닌, 전체 학생 기준 합계로 골라주시면 됩니다.' },
-    { id: 'B4', sec: 0, type: 'single', req: true, title: '1년에 모의고사를\n보통 몇 회 실시하시나요?', hint: '연간 절약 시간을 계산하는 데 활용됩니다.', opts: ['2회', '4회', '6회', '8회 이상'], vals: [2, 4, 6, 8] },
+    { id: 'B4', sec: 0, type: 'single', req: true, title: '1년에 모의고사를\n보통 몇 회 실시하시나요?', hint: '연간 절약 시간을 계산하는 데 활용됩니다.', opts: ['2회', '4회', '6회', '8회', '10회 이상'], vals: [2, 4, 6, 8, 10] },
     { id: 'B5', sec: 0, type: 'multi', req: false, title: '아낀 시간은\n주로 어디에\n활용하실 수 있을까요?', hint: '여러 개 선택하셔도 괜찮습니다.', opts: ['학생 상담', '수업 준비', '다른 행정 업무', '기타'] },
     { id: 'C1', sec: 1, type: 'single', req: true, title: '가장 도움이 된\n기능 하나만 골라주세요', hint: '', opts: FEAT },
     { id: 'C2', sec: 1, type: 'grid', req: true, title: '기능별 만족도를\n매겨주세요', hint: '1 매우 불만족 · 5 매우 만족', rows: FEAT },
