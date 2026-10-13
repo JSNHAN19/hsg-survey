@@ -144,6 +144,8 @@ function ensureHeaders_(sh) {
   return sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0].map(String);
 }
 function writeHeaders_(sh, headers) {
+  var need = Math.max(headers.length, 52); // Summary 수식이 A~AZ 열을 참조함
+  if (sh.getMaxColumns() < need) sh.insertColumnsAfter(sh.getMaxColumns(), need - sh.getMaxColumns());
   sh.getRange(1, 1, 1, headers.length).setValues([headers]);
 }
 function json_(obj) {
