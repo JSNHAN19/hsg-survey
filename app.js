@@ -358,8 +358,12 @@
     refresh();
     var row = payload();
     if (!cfg.SUBMIT_URL) {
-      console.log('[survey] SUBMIT_URL 비어 있음 — 제출 데이터:', row);
-      finish(row);
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+        console.log('[survey] SUBMIT_URL 비어 있음 — 제출 데이터:', row);
+        finish(row);
+      } else {
+        fail('제출 설정을 불러오지 못했습니다. 페이지를 새로고침한 뒤 다시 제출해주세요.');
+      }
       return;
     }
     var body = JSON.stringify({ token: cfg.SUBMIT_TOKEN || '', data: row });
@@ -369,13 +373,18 @@
         if (!res || !res.ok) throw new Error(res && res.error || 'failed');
         finish(row);
       })
-      .catch(function () {
-        state.submitting = false;
-        state.error = '제출에 실패했습니다. 인터넷 연결을 확인하신 뒤 다시 한 번 눌러주세요.';
-        busy = false;
-        refresh();
-        var err = $('err'); if (err) { err.textContent = state.error; err.hidden = false; err.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+      .catch(function (e) {
+        console.error('[survey] 제출 실패', e);
+        fail('제출에 실패했습니다. 인터넷 연결을 확인하신 뒤 다시 한 번 눌러주세요.');
       });
+  }
+
+  function fail(msg) {
+    state.submitting = false;
+    state.error = msg;
+    busy = false;
+    refresh();
+    var err = $('err'); if (err) { err.textContent = msg; err.hidden = false; err.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
   }
 
   /* ---------------- events ---------------- */
