@@ -1,6 +1,5 @@
-// Apps Script 웹 앱을 배포한 뒤 아래 두 값을 채워주세요.
-// SUBMIT_URL이 비어 있으면 제출 시 콘솔에 응답만 출력됩니다 (테스트용).
+// Apps Script 웹 앱 주소와 토큰 (Code.gs의 SHARED_TOKEN과 같은 값)
 window.SURVEY_CONFIG = {
-  SUBMIT_URL: "",
-  SUBMIT_TOKEN: ""
+  SUBMIT_URL: "https://script.google.com/macros/s/AKfycbxIW4wV1kTy49ZG24yWfSp3h9dieBtQrFDQoSMEhSAXsX5TL9rQR_ojnKCHYpx5CIs6lg/exec",
+  SUBMIT_TOKEN: "hsg-4q7m2x"
 };
