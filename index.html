@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFFFFF">
+<title>모의고사 대시보드 사용 후기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <span>모의고사 대시보드 — 사용 후기</span>
+    <span id="counter" class="num">2026 · 2학기</span>
+  </header>
+  <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+
+  <main id="stage" class="stage" aria-live="polite"></main>
+
+  <footer id="nav" class="nav" hidden>
+    <button id="prev" class="btn btn-ghost" type="button">이전</button>
+    <button id="next" class="btn btn-primary" type="button">다음</button>
+  </footer>
+
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <span data-o class="ov-kicker">SECTION</span>
+    <span data-o id="ovNum" class="ov-num num">01</span>
+    <span data-o class="ov-rule"></span>
+    <span data-o id="ovTitle" class="ov-title">시간 절감</span>
+    <span data-o id="ovSub" class="ov-sub"></span>
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
